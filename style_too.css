@@ -113,6 +113,8 @@ body main{
 .flex-left p{
     text-align: left;
     font-size: 1.5rem;
+    text-wrap: balance;
+    padding: 80px;
 }
 
 .flex-right{
@@ -128,4 +130,6 @@ body main{
 .flex-right p{
     text-align: right;
     font-size: 1.5rem;
+    text-wrap: balance;
+    padding: 80px;
 }
