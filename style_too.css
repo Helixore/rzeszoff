@@ -104,7 +104,7 @@ body main{
 .flex-left{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .flex-left img{
     height: 600px;
@@ -120,7 +120,7 @@ body main{
 .flex-right{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .flex-right img{
