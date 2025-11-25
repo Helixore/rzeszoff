@@ -149,7 +149,7 @@ body main {
     padding: 0px;
     animation: roll-in 2s ease-out forwards;
     z-index: 2;
-    top: 225px;
+    top: 25%;
 }
 
 .can-wrapper .top {
