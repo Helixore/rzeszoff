@@ -50,7 +50,7 @@
 
 body {
     width: 100%;
-    height: 500vh;
+    height: 100vh;
     overflow-x: hidden;
 }
 body header {
@@ -149,7 +149,7 @@ body main {
     padding: 0px;
     animation: roll-in 2s ease-out forwards;
     z-index: 2;
-    top: 25%;
+    top: 15vh;
 }
 
 .can-wrapper .top {
