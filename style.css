@@ -1,0 +1,259 @@
+:root { --win-w: 200px; --win-h: 250px; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.montserrat-bold-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.montserrat-main-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-regular-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-thin-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.unselectable {
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    /*user-drag: none;*/
+}
+
+body {
+    width: 100%;
+    height: 500vh;
+    overflow-x: hidden;
+}
+body header {
+    height: 10vh;
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+body header img {
+    height:32px;
+}
+
+body header nav {
+    background-color: #cccccc;
+    padding: 20px;
+    border-radius: 15px;
+}
+body header nav ul li{
+    background-color: #eeeeee;
+    display: inline;
+    margin: 0px;
+    padding: 7px 7px;
+    border-radius: 5px;
+}
+
+body main{
+    overflow: hidden;
+}
+
+.can-view {
+    width: 100%;
+    height: 90vh;
+    border-bottom: 1px solid black;
+    display:flex;
+}
+.left {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    color: darkgray;
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.25s ease 0s;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    mix-blend-mode: difference;
+}
+.left p {
+    transition: opacity 0.25s ease 0.0s;
+}
+.right{
+    display: flex;
+    width:50%;
+    height: 100%;
+    background-color: white;
+    color: #000;
+    font-size: 2rem;
+    padding: 15px 15px 15px 150px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.buttons {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+}
+.buttons button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 40px;
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.25s ease 0s;
+}
+body main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.can-wrapper{ /* can move container */
+    position: absolute;
+    height: 550px;
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+    animation: roll-in 2s ease-out forwards;
+    z-index: 2;
+    top: 225px;
+}
+
+.can-wrapper .top {
+    position: relative;
+    width: 200px;
+    height: 5px;
+    background-image: url("imgs/soda_can_mockup_cherry_0001_top_of_can.png");
+    background-size:cover;
+    left: 0px;
+    top: 0px;
+}
+
+.can-wrapper .bottom {
+    position: relative;
+    width: 200px;
+    height: 11px;
+    background-image: url("imgs/soda_can_mockup_cherry_0000_bottom_of_can.png");
+    background-size:cover;
+    left: 0px;
+    top: 0px;
+}
+
+.can { /* can spin container */
+    position: relative;
+    width: 200px;          /* fizyczna szerokość puszki na stronie */
+    height: 533px;         /* zachowane proporcje 1080x1920 */
+    transform-style: preserve-3d;
+    animation: spin-in 2s ease-out forwards;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+/* 12 paneli = 1080/12 = 90px tekstury na panel */
+.can .side {
+    margin: 0px;
+    backface-visibility: hidden;
+    position: absolute;
+    width: calc(300px / 12 + 1.6px); /* 25px każdy panel w renderze (skalowane proporcjonalnie) */
+    height: 533px;
+
+    background-image: url("imgs/black.png");
+    background-repeat: repeat-x;
+    background-size: 300px 533px;
+    background-position-x: calc(var(--i) * -25px);
+
+    transform-style: preserve-3d;
+    transform-origin: center;
+    /* cylinder */
+    transform:
+        rotateY(calc(var(--i) * 15deg))
+        translateZ(100px);
+    top: 0;
+    left: 86.5px; /* centrowanie paneli */
+}
+
+.spin-in {
+    animation: spin-in 2s ease-out forwards;
+}
+.spin-out {
+    animation: spin-out 1s ease-out forwards;
+}
+
+.roll-in {
+    animation: roll-in 2s ease-out forwards;
+}
+
+.roll-out {
+    animation: roll-out 1s ease-out forwards;
+}
+
+@keyframes spin-in {
+    from { 
+        transform: rotateY(0deg); 
+    }
+    to   { 
+        transform: rotateY(-440deg); 
+    }
+}
+@keyframes spin-out {
+    from { 
+        transform: rotateY(-440deg); 
+    }
+    to   { 
+        transform: rotateY(-800deg); 
+    }
+}
+@keyframes roll-in {
+    0%{
+        left: 120%;
+    }
+    100%{
+        left: calc(50% - 100px);
+    }
+}
+@keyframes roll-out {
+    0%{
+        left: 120%;
+    }
+    1%{
+        left: calc(50% - 100px);
+    }
+    100%{
+        left: -20%;
+    }
+}
