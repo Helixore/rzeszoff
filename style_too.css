@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.montserrat-bold-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.montserrat-main-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-regular-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-thin-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.unselectable {
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    /*user-drag: none;*/
+}
+
+body {
+    width: 100%;
+    height: 400vh;
+    overflow-x: hidden;
+}
+body header {
+    height: 10vh;
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+body header img {
+    height:32px;
+}
+
+body header nav {
+    background-color: #cccccc;
+    padding: 20px;
+    border-radius: 15px;
+}
+body header nav ul li{
+    background-color: #eeeeee;
+    display: inline;
+    margin: 0px;
+    padding: 7px 7px;
+    border-radius: 5px;
+}
+.nav-flex-end {
+    margin-left: auto;
+    margin-right: 50px;
+    color: #000;
+}
+
+body main{
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+.fst {
+    background-image: url("imgs/cans/kryuwa.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255,255,255,0.88);
+    background-blend-mode: lighten;
+    font-size: 2rem;
+    padding:250px;
+}
+.pucha-img{
+    width:100%;
+    image-rendering: auto;
+}
+
+.flex-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.flex-left img{
+    height: 600px;
+}
+
+.flex-left p{
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.flex-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.flex-right img{
+    height: 600px;
+}
+
+.flex-right p{
+    text-align: right;
+    font-size: 1.5rem;
+}

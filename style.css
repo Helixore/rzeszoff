@@ -1,4 +1,3 @@
-:root { --win-w: 200px; --win-h: 250px; }
 
 * {
     margin: 0;
@@ -76,6 +75,11 @@ body header nav ul li{
     padding: 7px 7px;
     border-radius: 5px;
 }
+.nav-flex-end {
+    margin-left: auto;
+    margin-right: 50px;
+    color: #000;
+}
 
 body main{
     overflow: hidden;
@@ -92,7 +96,6 @@ body main{
     width: 50%;
     height: 100%;
     background-color: red;
-    color: darkgray;
     font-size: 2rem;
     padding: 15px;
     text-align: center;
@@ -105,6 +108,8 @@ body main{
 }
 .left p {
     transition: opacity 0.25s ease 0.0s;
+    color: white;
+    font-size: 6rem;
 }
 .right{
     display: flex;
@@ -113,21 +118,17 @@ body main{
     background-color: white;
     color: #000;
     font-size: 2rem;
-    padding: 15px 15px 15px 150px;
+    padding: 15px 45px 15px 150px;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
 .right p {
-    transition: opacity 0.125s ease 0.0s;
+    transition: opacity 0.25s ease 0.0s;
 }
-.primary {
-    position: absolute;
-}
-.secondary {
-    position: absolute;
-}
+
+
 
 
 .buttons {
@@ -291,6 +292,9 @@ body main {
     0%{
         left: 120%;
     }
+    5%{
+        left: 100%;
+    }
     100%{
         left: calc(50% - 100px);
     }
@@ -298,6 +302,9 @@ body main {
 @keyframes roll-in-right {
     0%{
         left: -20%;
+    }
+    5% {
+        left: 0%;
     }
     100%{
         left: calc(50% - 100px);

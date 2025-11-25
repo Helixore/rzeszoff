@@ -69,54 +69,24 @@ function disableButtons(){
 }
 
 
-function changeText(index){
-    
-    let rightPrimaryText = document.querySelector('.right p.primary');
-    let rightSecondaryText = document.querySelector('.right p.secondary');
-    
-    rightSecondaryText.style.opacity = 0;
 
-        if(indexHist != index){
-            if(reverseGowno == false) {
-                if(gowno == true){
-                    rightSecondaryText.style.opacity = 0;
-                    rightPrimaryText.textContent = rightTexts[index];
-                    rightPrimaryText.style.opacity = 1;
-                    gowno = false;
-                }
-                else{
-                    rightPrimaryText.style.opacity = 0;
-                    rightSecondaryText.textContent = rightTexts[index];
-                    rightSecondaryText.style.opacity = 1;
-                    gowno = true;
-                }
-            } else {
-                if(gowno == true){
-                    rightPrimaryText.style.opacity = 0;
-                    rightSecondaryText.textContent = rightTexts[index];
-                    rightSecondaryText.style.opacity = 1;
-                    gowno = false;
-                }
-                else{
-                    rightSecondaryText.style.opacity = 0;
-                    rightPrimaryText.textContent = rightTexts[index];
-                    rightPrimaryText.style.opacity = 1;
-                    gowno = true;
-                }
-            }
-        }
-        indexHist = index;
-}
 
 function changeColor(index) {
     let leftDiv = document.querySelector('.left');
     let rightDiv = document.querySelector('.right');
+    let leftText = document.querySelector('.left p');
+    let rightText = document.querySelector('.right p.primary');
+
     console.log(colors[index]);
     leftDiv.style.backgroundColor = colorHex[index];
-    let leftText = document.querySelector('.left p');
+    
+    leftText.style.opacity = 0;
+    rightText.style.opacity = 0;
     setTimeout(() => {
         leftText.textContent = texts[index];
         leftText.style.opacity = 1;
+        rightText.textContent = rightTexts[index];
+        rightText.style.opacity = 1;
     }, 250);
     console.log(index);
 }
@@ -270,16 +240,3 @@ function changeCanTexture(back) {
         });
     }
 }
-
-const el = document.querySelector('.can-wrapper');
-
-el.addEventListener("animationstart", (e) => {
-  if (e.animationName !== "roll-in" && e.animationName !== "roll-back") return;   // <-- only trigger for this specific animation
-
-  const duration = parseFloat(getComputedStyle(el).animationDuration) * 1000;
-    console.log("Animation started: " + e.animationName + " | duration: " + duration);
-  setTimeout(() => {
-    console.log("Roll animation halfway!");
-    changeText(colorIndex);
-  }, duration / 2);
-});
